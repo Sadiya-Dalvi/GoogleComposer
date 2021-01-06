@@ -1,9 +1,9 @@
-Task 2 - Write another python script to read from the parquet or orc file and create a descriptive summary. 
+# Task 2 - Write another python script to read from the parquet or orc file and create a descriptive summary. 
+
 Compute sum of a numeric column. 
 You can take it a step further by grouping it on a specific. Calculated Trips by passenger count ordered by passenger count in descending order.
 
 ```
-#test
 import pyspark
 import sys
 
