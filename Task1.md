@@ -1,6 +1,6 @@
-# Dataset Used NYC City Taxi Data
+# Task 1 
+Dataset Used NYC City Taxi Data
 
-Task 1
 Create a python script which will run as a job in the data pipeline. The python script will read data from the nosql db and clean the data
 remove null values from all columns, remove duplicate entries. The cleaned data is then written into parquet or orc file (alternatively can write to a json file)
 
