@@ -1,6 +1,6 @@
 # Task 3 - Integrate the above jobs into a data pipeline, the job flow is important so step 2 should precede step 3 in the data pipeline 
 
-Created the following datapipeline where the steps are given below:
+Created the following datapipeline using google composer and apache airflow where the steps are given below:
 
 1. Created a dataproc cluster 'create_dataproc_cluster'
 2. Ran an ETL process as described in task 1. This calls etl_save.py.  'etl_process'
@@ -10,9 +10,8 @@ Created the following datapipeline where the steps are given below:
 The DAG  datapipeline.py is given below:
 
 ```
-from __future__ import print_function
-
-import datetime
+ from __future__ import print_function
+ import datetime
 
 from airflow import models
 from airflow.operators import bash_operator
@@ -72,5 +71,6 @@ with models.DAG(
         trigger_rule = trigger_rule.TriggerRule.ALL_DONE
     )
 
-    create_dataproc_cluster >> etl_process >> dataproc_pyspark >> delete_dataproc_cluster
+  create_dataproc_cluster >> etl_process >> dataproc_pyspark >> delete_dataproc_cluster
   ```
+To see the output and screenshots of the above airflow datapipeline refer the Output section.
