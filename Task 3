@@ -3,7 +3,7 @@
 Solution: Created a google composer with the following pypi packages as shown in screenshot below:
 
 <kbd>
-<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/composer_with_pypi packages.png" alt="Cloud Composer" width="700" height="300" >
+<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/composer_with_pypi%20packages.png" alt="Cloud Composer" width="700" height="300" >
 </kbd
 
 Created the following datapipeline using google composer and apache airflow where the tasks are are given below:
@@ -88,7 +88,7 @@ with models.DAG(
   Output
   
 <kbd>
-<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/dag_successful.png" alt="Cloud Composer" width="700" height="300" >
+<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/dag_success.png" alt="Dag successful job" width="700" height="300" >
 </kbd>
 
 Output of Task_id = create_dataproc_cluster
@@ -141,7 +141,7 @@ googleapiclient.errors.HttpError: <HttpError 409 when requesting https://datapro
 [2021-01-06 05:05:09,393] {taskinstance.py:1071} INFO - Marking task as SUCCESS.dag_id=composer_datapipeline, task_id=create_dataproc_cluster, execution_date=20210105T000000, start_date=20210106T050212, end_date=20210106T050509
 [2021-01-06 05:05:13,520] {local_task_job.py:102} INFO - Task exited with return code 0
 ```
-Output of task_id= 'etl_process'
+# Output of task_id= 'etl_process'
 
 ```
 *** Reading remote log from gs://us-central1-firstcomposer-12f2193c-bucket/logs/composer_datapipeline/etl_process/2021-01-05T00:00:00+00:00/1.log.
@@ -250,7 +250,7 @@ CommandException: No URLs matched: us-east1
 ```
 The parquet file is copied on to the cloud storage as part of task_id 'etl_process'
 <kbd>
-<img src="https://github.com/Sadiya-Dalvi/Google-Composer-Airflow-Datastore-to-Cloud-Storage/blob/main/Images/nyc_parquet.png" alt="parquet" width="700" height="300" >
+<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/nyc_parquet.png" alt="parquet" width="700" height="300" >
 </kbd>
 
 Output of the dataproc job task_id = 'Query_Data_spark_job':
