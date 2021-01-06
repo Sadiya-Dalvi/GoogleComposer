@@ -1,4 +1,6 @@
-# Task 3 - Integrate the above jobs into a data pipeline, the job flow is important so step 2 should precede step 3 in the data pipeline 
+# Task 3 
+
+Integrate the above jobs into a data pipeline, the job flow is important so step 2 should precede step 3 in the data pipeline 
 
 Solution: Created a google composer with the following pypi packages as shown in screenshot below:
 
