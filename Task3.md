@@ -6,6 +6,9 @@ Solution: Created a google composer with the following pypi packages as shown in
 <img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/composer_with_pypi%20packages.png" alt="Cloud Composer" width="700" height="300" >
 </kbd
 
+/
+  
+
 Created the following datapipeline using google composer and apache airflow where the tasks are are given below:
 
 1. Task id(create_dataproc_cluster) - Created a dataproc cluster 
