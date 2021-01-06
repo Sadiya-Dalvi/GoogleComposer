@@ -17,10 +17,10 @@ Created the following datapipeline using google composer and apache airflow wher
 <img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/airflow.png" alt="Cloud Composer-airflow" width="700" height="300" >
 </kbd
 
-**The DAG  datapipeline.py is given below:
+##The DAG  datapipeline.py is given below:
 
 ```
- from __future__ import print_function
+from __future__ import print_function
  import datetime
 
 from airflow import models
@@ -82,7 +82,7 @@ with models.DAG(
     )
 
   create_dataproc_cluster >> etl_process >> dataproc_pyspark >> delete_dataproc_cluster
-  ```
+ ```
   
   
   Output
