@@ -43,6 +43,5 @@ df.to_parquet("yellowtaxi.parquet")
 
 #os.system('gsutil cp yellowtaxi.parquet us-central1 gs://us-central1-firstcomposer-12f2193c-bucket/data/;')
 os.system('gsutil cp yellowtaxi.parquet us-east1 gs://dataproc-nyc-taxi-2020/Week5/;')
-
 ```
 
