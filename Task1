@@ -5,7 +5,7 @@ Create a python script which will run as a job in the data pipeline. The python 
 remove null values from all columns, remove duplicate entries. The cleaned data is then written into parquet or orc file (alternatively can write to a json file)
 
 Solution:
-Nosql db used here is Datastore. Wrote a python script to read NYC TAXI dataset and did transformations and converted it into parquet 
+Nosql db used here is Datastore. Wrote a python script(etl_save.py) to read NYC TAXI dataset and did transformations and converted it into parquet 
 format. Once converted wrote it to the cloud storage
 
 ```
