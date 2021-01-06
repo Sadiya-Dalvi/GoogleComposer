@@ -1,12 +1,15 @@
-# Task 2 - Write another python script to read from the parquet or orc file and create a descriptive summary. 
+# Task 2 - Write another python script to read from the parquet or orc file and create a descriptive summary
 
 Compute sum of a numeric column. 
 You can take it a step further by grouping it on a specific. Calculated Trips by passenger count ordered by passenger count in descending order.
 
+
+Solution:
+Wrote a script (dataproc_nyctaxi.py) to read from the parquet file generated in Task 1 and ran it as a job on a Dataproc cluster.
+
 ```
 import pyspark
 import sys
-
 
 from pyspark.sql import SparkSession
 
@@ -38,6 +41,4 @@ nyctaxi_df.groupby('passenger_count').agg({'trip_distance': 'mean'}).show()
 # order of passenger count
 nyctaxi_df.groupby('passenger_count').count(). \
 orderBy(nyctaxi_df.passenger_count.desc()).show()
-
-
 ```
