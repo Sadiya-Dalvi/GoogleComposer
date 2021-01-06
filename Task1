@@ -1,11 +1,12 @@
 # Dataset Used - NYC City Taxi Data
 
-Task 1:
-Create a python script which will run as a job in the data pipeline. The python script will read data from the nosql db and clean the data
-remove null values from all columns, remove duplicate entries. The cleaned data is then written into parquet or orc file (alternatively can write to a json file)
+Task 1:\
+Create a python script which will run as a job in the data pipeline. The python script will read data from the nosql db and clean the data\
+remove null values from all columns, remove duplicate entries. The cleaned data is then written into parquet or orc file (alternatively can write to a json file)\
 
-Solution:
-Nosql db used here is Datastore. Wrote a python script to read NYC TAXI dataset and did transformations and converted it into parquet format. Once converted wrote it to the cloud storage
+Solution:\
+Nosql db used here is Datastore. Wrote a python script to read NYC TAXI dataset and did transformations and converted it into parquet \
+format. Once converted wrote it to the cloud storage\
 
 ```
 import sys
@@ -41,6 +42,5 @@ df.to_parquet("yellowtaxi.parquet")
 
 #os.system('gsutil cp yellowtaxi.parquet us-central1 gs://us-central1-firstcomposer-12f2193c-bucket/data/;')
 os.system('gsutil cp yellowtaxi.parquet us-east1 gs://dataproc-nyc-taxi-2020/Week5/;')
-
 ```
 
