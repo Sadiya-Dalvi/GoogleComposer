@@ -3,7 +3,7 @@
 Solution: Created a google composer with the following pypi packages as shown in screenshot below:
 
 <kbd>
-<img src="https://github.com/Sadiya-Dalvi/Google-Composer-Airflow-Datastore-to-Cloud-Storage/blob/main/Images/composer_with_pypi packages.png" alt="Cloud Composer" width="700" height="300" >
+<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/composer_with_pypi packages.png" alt="Cloud Composer" width="700" height="300" >
 </kbd
 
 Created the following datapipeline using google composer and apache airflow where the tasks are are given below:
@@ -14,10 +14,10 @@ Created the following datapipeline using google composer and apache airflow wher
 4. Task id (delete_dataproc_cluster) - Deleted the dataproc cluster 'delete_dataproc_cluster'
 
 <kbd>
-<img src="https://github.com/Sadiya-Dalvi/Google-Composer-Airflow-Datastore-to-Cloud-Storage/blob/main/Images/airflow.png" alt="Cloud Composer" width="700" height="300" >
+<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/airflow.png" alt="Cloud Composer-airflow" width="700" height="300" >
 </kbd
 
-The DAG  datapipeline.py is given below:
+**The DAG  datapipeline.py is given below:
 
 ```
  from __future__ import print_function
@@ -88,7 +88,7 @@ with models.DAG(
   Output
   
 <kbd>
-<img src="https://github.com/Sadiya-Dalvi/Google-Composer-Airflow-Datastore-to-Cloud-Storage/blob/main/Images/dag_successful.png" alt="Cloud Composer" width="700" height="300" >
+<img src="https://github.com/Sadiya-Dalvi/GoogleComposer/blob/main/Images/dag_successful.png" alt="Cloud Composer" width="700" height="300" >
 </kbd>
 
 Output of Task_id = create_dataproc_cluster
