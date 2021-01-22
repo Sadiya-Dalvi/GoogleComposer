@@ -17,7 +17,7 @@ yesterday = datetime.datetime.combine(
 default_dag_args = {
     # Setting start date as yesterday starts the DAG immediately when it is
     # detected in the Cloud Storage bucket.
-    'start_date': datetime.datetime(2021, 1, 22),
+    'start_date': datetime.datetime(2021, 1, 13),
 }
 
 with models.DAG(
