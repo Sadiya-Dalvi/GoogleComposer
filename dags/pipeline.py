@@ -15,7 +15,7 @@ yesterday = datetime.datetime.combine(
     datetime.datetime.today() - datetime.timedelta(1),
     datetime.datetime.min.time())
 
-default_args = {
+default_dag_args = {
     'start_date': airflow.utils.dates.days_ago(0),
     'retries': 1,
     'retry_delay': timedelta(minutes=5)
