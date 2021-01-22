@@ -14,12 +14,11 @@ yesterday = datetime.datetime.combine(
     datetime.datetime.today() - datetime.timedelta(1),
     datetime.datetime.min.time())
 
-default_dag_args = {
-    # Setting start date as yesterday starts the DAG immediately when it is
-    # detected in the Cloud Storage bucket.
-    'start_date': datetime.datetime(2021, 1, 22),
+default_args = {
+    'start_date': airflow.utils.dates.days_ago(0),
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5)
 }
-
 with models.DAG(
         'Project_WH_Parallel_Datapipeline',
         schedule_interval=datetime.timedelta(days=1),
