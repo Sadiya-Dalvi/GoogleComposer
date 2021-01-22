@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 import datetime
-
+import airflow
 from airflow import models
 from airflow.operators import bash_operator
 from airflow.operators import python_operator
