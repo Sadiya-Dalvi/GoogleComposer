@@ -7,11 +7,11 @@ import pyspark.sql.functions as F
 #from google.cloud import bigquery
 
 #import datetime
-#gs://worldbank2021/rawdata/wh_country_series_definition
-#gs://worldbank2021/rawdata/wh_country_summary
-#gs://worldbank2021/rawdata/wh_health_nutrition_population
-#gs://worldbank2021/rawdata/wh_series_summary
-#gs://worldbank2021/rawdata/wh_series_times
+#gs://worldbank2021/rawdata/wb_country_series_definition
+#gs://worldbank2021/rawdata/wb_country_summary
+#gs://worldbank2021/rawdata/wb_health_nutrition_population
+#gs://worldbank2021/rawdata/wb_series_summary
+#gs://worldbank2021/rawdata/wb_series_times
 
 
 spark = SparkSession.builder.appName('World Health Data').getOrCreate()
@@ -38,7 +38,23 @@ print("There are {} rows in the Dataframe after dropping duplicates.".format(df.
 bucket = "worldbank2021"
 spark.conf.set('temporaryGcsBucket', bucket)
 
-if table_name == 'wh_health_nutrition_population':
+if table_name == 'wb_country_series_definitions':
+    df = df.dropna(subset=['series_code'])
+    print("There are {} rows in the Dataframe after dropping nulls.".format(df.count()))
+
+ if table_name == 'wb_country_summary':
+        df = df.dropna(subset=['country_code'])
+        print("There are {} rows in the Dataframe after dropping nulls.".format(df.count()))
+
+if table_name == 'wb_series_summary':
+            df = df.dropna(subset=['series_code'])
+            print("There are {} rows in the Dataframe after dropping nulls.".format(df.count()))
+
+if table_name == 'wb_series_times':
+                df = df.dropna(subset=['series_code'])
+                print("There are {} rows in the Dataframe after dropping nulls.".format(df.count()))
+
+if table_name == 'wb_health_nutrition_population':
     df = df.dropna(subset=['indicator_code'])
     print("There are {} rows in the Dataframe after dropping nulls.".format(df.count()))
 
@@ -54,7 +70,7 @@ if table_name == 'wh_health_nutrition_population':
 #filter_rows.show()
 #filter_rows.printSchema()
 
-if table_name == 'wh_health_nutrition_population':
+if table_name == 'wb_health_nutrition_population':
     df = df.withColumn('dateYear',
                        F.to_date(F.col('year').cast(StringType()),'yyyy'))
 
@@ -75,7 +91,7 @@ if table_name == 'wh_health_nutrition_population':
 
 bq_table_name = 'worldbankhealth.' + table_name
 
-if table_name == 'wh_health_nutrition_population':
+if table_name == 'wb_health_nutrition_population':
     df.write.format('bigquery') \
         .option('table', bq_table_name) \
         .option('partitionField','dateYear') \
