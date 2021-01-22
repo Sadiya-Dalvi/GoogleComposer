@@ -9,6 +9,7 @@ from airflow.contrib.operators import dataproc_operator
 from airflow.utils import trigger_rule
 # from airflow.contrib.operators import bigquery_operator
 from airflow.utils.dates import days_ago
+from datetime import timedelta
 
 yesterday = datetime.datetime.combine(
     datetime.datetime.today() - datetime.timedelta(1),
